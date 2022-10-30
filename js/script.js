@@ -5,17 +5,20 @@ async function show_pokemon_description(name, container){
     let text;
     let text2;
 
-    if (name!= 'meloetta' && name!='kyurem' && name!='cryogonal' && name!='escavalier'){
-        text = datos['flavor_text_entries'][1]['flavor_text'];
-        text2 = datos['flavor_text_entries'][3]['flavor_text'];
-    }else if(name=='meloetta'){
-        text = datos['flavor_text_entries'][0]['flavor_text'];
-        text2 = datos['flavor_text_entries'][2]['flavor_text'];
-    }else{
-        text = datos['flavor_text_entries'][2]['flavor_text'];
-        text2 = datos['flavor_text_entries'][4]['flavor_text'];
+    for (i=0; i<datos['flavor_text_entries'].length; i++){
+        if(datos['flavor_text_entries'][i]['language']['name'] =='en' && 
+        datos['flavor_text_entries'][i]['version']['name']=='black'){
+            text = datos['flavor_text_entries'][i]['flavor_text'];
+            break;
+        }
     }
-    
+    for (i=0; i<datos['flavor_text_entries'].length; i++){
+        if(datos['flavor_text_entries'][i]['language']['name'] =='en' && 
+        datos['flavor_text_entries'][i]['version']['name']=='white'){
+            text2 = datos['flavor_text_entries'][i]['flavor_text'];
+            break;
+        }
+    }
 
     let pokemon_text = document.querySelector('.pokemon_data_text');
     if(pokemon_text==null){
@@ -93,7 +96,6 @@ async function show_pokemon_info(name, display_name, nr){
         pokemon_types.textContent = types;
         pokemon_container_data.appendChild(pokemon_types);
     }else{
-        console.log('ok')
         pokemon_types.textContent = types;
     }
 

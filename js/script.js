@@ -144,7 +144,10 @@ async function get_pokemon_names(i){
 
     get_pokemon_img(name, nueva_entrada);
 
-    nueva_entrada.addEventListener('click', ()=>show_pokemon_info(name, display_name, nr))
+    nueva_entrada.addEventListener('click', ()=>{
+        show_pokemon_info(name, display_name, nr);
+        document.body.scrollIntoView({behavior: "smooth"});
+    })
     
 }
 

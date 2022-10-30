@@ -112,7 +112,7 @@ header img{
 }
 
 .pokemon_data_heading{
-    margin-bottom: 28rem;
+    margin-bottom: 22rem;
 }
 
 .pokemon_container_data{
@@ -123,8 +123,8 @@ header img{
 }
 
 .pokemon_data_img{
-    max-width: 30rem;
-    margin-top: -25rem;
+    max-width: 25rem;
+    margin-top: -20rem;
 }
 
 .pokemon_types{
@@ -152,6 +152,16 @@ footer p{
     text-align: center;
 }
 
+@media (min-width: 300px) {
+    .pokemon_data_img{
+        max-width: 30rem;
+        margin-top: -25rem;
+    }
+    .pokemon_data_heading{
+        margin-bottom: 28rem;
+    }
+}
+
 @media (min-width: 380px) {
     h1{
         font-size: 4.5rem;
@@ -159,6 +169,7 @@ footer p{
     h2{
         font-size: 4.5rem;
     }
+    
 }
 
 @media (min-width: 420px) {

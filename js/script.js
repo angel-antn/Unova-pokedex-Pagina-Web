@@ -5,7 +5,7 @@ async function show_pokemon_description(name, container){
     let text;
     let text2;
 
-    if (name!= 'meloetta' && name!='kyurem'){
+    if (name!= 'meloetta' && name!='kyurem' && name!='cryogonal' && name!='escavalier'){
         text = datos['flavor_text_entries'][1]['flavor_text'];
         text2 = datos['flavor_text_entries'][3]['flavor_text'];
     }else if(name=='meloetta'){
